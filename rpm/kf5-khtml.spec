@@ -27,6 +27,7 @@ BuildRequires:  pkgconfig(Qt5Widgets)
 BuildRequires:  pkgconfig(Qt5Concurrent)
 BuildRequires:  pkgconfig(Qt5Test)
 BuildRequires:  pkgconfig(Qt5X11Extras)
+BuildRequires:  pkgconfig(Qt5PrintSupport)
 BuildRequires:  fdupes
 BuildRequires:  giflib-devel
 BuildRequires:  libjpeg-devel
