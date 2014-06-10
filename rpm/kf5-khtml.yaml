@@ -1,0 +1,108 @@
+Name         : kf5-khtml
+Version      : 4.100.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE Frameworks 5 Tier 4 solution with KHTML engine
+Description  : |
+  KHTML is a web rendering engine, based on the KParts technology and using KJS
+  for JavaScript support.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - fdupes
+    - giflib-devel
+    - libjpeg-devel
+    - openssl-devel
+    - perl
+    - libpng-devel
+    - zlib-devel
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - phonon-qt5-devel
+    - kf5-karchive-devel
+    - kf5-kcodecs-devel
+    - kf5-kglobalaccel-devel
+    - kf5-ki18n-devel
+    - kf5-kiconthemes-devel
+    - kf5-kio-devel
+    - kf5-kjs-devel
+    - kf5-knotifications-devel
+    - kf5-kparts-devel
+    - kf5-ktextwidgets-devel
+    - kf5-kwallet-devel
+    - kf5-kwidgetsaddons-devel
+    - kf5-kwindowsystem-devel
+    - kf5-kxmlgui-devel
+    - kf5-sonnet-devel
+PkgConfigBR:
+    - Qt5Core
+    - Qt5DBus
+    - Qt5Xml
+    - Qt5Network
+    - Qt5Gui
+    - Qt5Widgets
+    - Qt5Concurrent
+    - Qt5Test
+    - Qt5X11Extras
+Requires:
+    - kf5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING.GPL3 COPYING.LIB README.md"
+    - "%{_kf5_libdir}/libKF5KHtml.so.*"
+    - "%{_kf5_qtplugindir}/kf5/*.so"
+    - "%{_kf5_datadir}/kf5/kjava/"
+    - "%{_kf5_datadir}/kf5/khtml/"
+    - "%{_kf5_datadir}/khtml/"
+    - "%{_kf5_datadir}/kservices5/*.desktop"
+    - "%{_kf5_sysconfdir}/xdg/khtmlrc"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Requires:
+          - kf5-karchive-devel
+          - kf5-kcodecs-devel
+          - kf5-kglobalaccel-devel
+          - kf5-ki18n-devel
+          - kf5-kiconthemes-devel
+          - kf5-kio-devel
+          - kf5-kjs-devel
+          - kf5-knotifications-devel
+          - kf5-kparts-devel
+          - kf5-ktextwidgets-devel
+          - kf5-kwallet-devel
+          - kf5-kwidgetsaddons-devel
+          - kf5-kwindowsystem-devel
+          - kf5-kxmlgui-devel
+          - kf5-sonnet-devel
+      Files:
+          - "%{_kf5_libdir}/libKF5KHtml.so"
+          - "%{_kf5_libdir}/cmake/KF5KHtml/*.cmake"
+          - "%{_kf5_includedir}/KHtml/"
+          - "%{_kf5_includedir}/khtml_version.h"
+          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
