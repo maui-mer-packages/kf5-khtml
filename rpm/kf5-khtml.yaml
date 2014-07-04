@@ -26,10 +26,7 @@ PkgBR:
     - fdupes
     - giflib-devel
     - libjpeg-devel
-    - openssl-devel
     - perl
-    - libpng-devel
-    - zlib-devel
     - kf5-rpm-macros
     - extra-cmake-modules
     - qt5-tools
@@ -60,6 +57,9 @@ PkgConfigBR:
     - Qt5Test
     - Qt5X11Extras
     - Qt5PrintSupport
+    - openssl
+    - libpng
+    - zlib
 Requires:
     - kf5-filesystem
 
