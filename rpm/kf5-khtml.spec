@@ -107,12 +107,13 @@ that use %{name}.
 rm -rf %{buildroot}
 # >> install pre
 %kf5_make_install
+%find_lang khtml5_qt --with-qt --all-name || :
 # << install pre
 
 # >> install post
 # << install post
 
-%files
+%files -f khtml5_qt.lang
 %defattr(-,root,root,-)
 %doc COPYING.GPL3 COPYING.LIB README.md
 %{_kf5_libdir}/libKF5KHtml.so.*

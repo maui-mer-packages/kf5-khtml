@@ -78,6 +78,8 @@ Files:
     - "%{_kf5_datadir}/kservices5/*.desktop"
     - "%{_kf5_sysconfdir}/xdg/khtmlrc"
 
+FilesInput: khtml5_qt.lang
+
 SubPackages:
     - Name: devel
       Group: Development/Libraries
