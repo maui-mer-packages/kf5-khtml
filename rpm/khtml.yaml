@@ -1,5 +1,5 @@
-Name         : kf5-khtml
-Version      : 5.0.0
+Name         : khtml
+Version      : 5.1.0
 Release      : 1
 Group        : System/Base
 License      : GPLv2+
@@ -31,21 +31,21 @@ PkgBR:
     - extra-cmake-modules
     - qt5-tools
     - phonon-qt5-devel
-    - kf5-karchive-devel
-    - kf5-kcodecs-devel
-    - kf5-kglobalaccel-devel
-    - kf5-ki18n-devel
-    - kf5-kiconthemes-devel
-    - kf5-kio-devel
-    - kf5-kjs-devel
-    - kf5-knotifications-devel
-    - kf5-kparts-devel
-    - kf5-ktextwidgets-devel
-    - kf5-kwallet-devel
-    - kf5-kwidgetsaddons-devel
-    - kf5-kwindowsystem-devel
-    - kf5-kxmlgui-devel
-    - kf5-sonnet-devel
+    - karchive-devel
+    - kcodecs-devel
+    - kglobalaccel-devel
+    - ki18n-devel
+    - kiconthemes-devel
+    - kio-devel
+    - kjs-devel
+    - knotifications-devel
+    - kparts-devel
+    - ktextwidgets-devel
+    - kwallet-devel
+    - kwidgetsaddons-devel
+    - kwindowsystem-devel
+    - kxmlgui-devel
+    - sonnet-devel
 PkgConfigBR:
     - Qt5Core
     - Qt5DBus
@@ -71,12 +71,11 @@ RequiresPostUn:
 Files:
     - "%doc COPYING.GPL3 COPYING.LIB README.md"
     - "%{_kf5_libdir}/libKF5KHtml.so.*"
-    - "%{_kf5_qtplugindir}/*"
-    - "%{_kf5_datadir}/kf5/kjava/"
-    - "%{_kf5_datadir}/kf5/khtml/"
-    - "%{_kf5_datadir}/khtml/"
-    - "%{_kf5_datadir}/kservices5/*.desktop"
-    - "%{_kf5_sysconfdir}/xdg/khtmlrc"
+    - "%{_kf5_plugindir}/*"
+    - "%{_kf5_datadir}/*"
+    - "%{_kf5_sharedir}/*"
+    - "%{_kf5_servicesdir}/*.desktop"
+    - "%{_kf5_configdir}/khtmlrc"
 
 FilesInput: khtml5_qt.lang
 
@@ -88,24 +87,24 @@ SubPackages:
         The %{name}-devel package contains the files necessary to develop applications
         that use %{name}.
       Requires:
-          - kf5-karchive-devel
-          - kf5-kcodecs-devel
-          - kf5-kglobalaccel-devel
-          - kf5-ki18n-devel
-          - kf5-kiconthemes-devel
-          - kf5-kio-devel
-          - kf5-kjs-devel
-          - kf5-knotifications-devel
-          - kf5-kparts-devel
-          - kf5-ktextwidgets-devel
-          - kf5-kwallet-devel
-          - kf5-kwidgetsaddons-devel
-          - kf5-kwindowsystem-devel
-          - kf5-kxmlgui-devel
-          - kf5-sonnet-devel
+          - karchive-devel
+          - kcodecs-devel
+          - kglobalaccel-devel
+          - ki18n-devel
+          - kiconthemes-devel
+          - kio-devel
+          - kjs-devel
+          - knotifications-devel
+          - kparts-devel
+          - ktextwidgets-devel
+          - kwallet-devel
+          - kwidgetsaddons-devel
+          - kwindowsystem-devel
+          - kxmlgui-devel
+          - sonnet-devel
       Files:
           - "%{_kf5_libdir}/libKF5KHtml.so"
-          - "%{_kf5_libdir}/cmake/KF5KHtml/*.cmake"
+          - "%{_kf5_cmakedir}/KF5KHtml/*.cmake"
           - "%{_kf5_includedir}/KHtml/"
           - "%{_kf5_includedir}/khtml_version.h"
-          - "%{_datadir}/qt5/mkspecs/modules/*.pri"
+          - "%{_kf5_mkspecsdir}/*.pri"
