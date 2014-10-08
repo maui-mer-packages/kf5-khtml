@@ -8,7 +8,6 @@ Description  : |
   KHTML is a web rendering engine, based on the KParts technology and using KJS
   for JavaScript support.
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
